@@ -1,3 +1,4 @@
+import Image from 'next/image'
 
 export async function generateStaticParams() {
     const res = await fetch(`https://fakestoreapi.com/products`)
@@ -20,7 +21,7 @@ export default async function Details({params}){
     return(
         <div>
             <div className="p-4 flex flex-col items-center " key={info.id}>
-                <div className=""><img className="border-2 rounded-md broder-slate-50 p-4  w-2/3 " src={`${info.image}`}/></div>
+                <div className="border-2 rounded-md broder-slate-50 p-4"><Image  src={`${info.image}`} width={500} height={500} alt="Picture of the author"/></div>
                 <div className="w-2/3 flex flex-col m-2 gap-2">
                     <h1 className="font-semibold text-4xl text-red-700">{info.title}</h1>
                     <h2 className="font-medium italic text-xl">${info.price}</h2>
