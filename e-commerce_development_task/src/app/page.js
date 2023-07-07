@@ -20,15 +20,17 @@ async function Products(){
     const mappedData= data.map(info=><Items info={info}/>)
     return(
         <>
-            <div className='grid grid-cols-4 gap-10 items-center p-8 m-2'>
-                {mappedData}
+            <div className="relative">
+                <div className='absolute top-16 grid grid-cols-4 gap-10 items-center p-8 m-2'>
+                    {mappedData}
+                </div>
             </div>
         </>
     )
 }
 
 export default Products
-export {data}
+
 
 
    
